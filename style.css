@@ -1,0 +1,52 @@
+:root {
+  --bg: #eef0ff;
+  --ink: #1b1740;
+  --accent: #5b3df5;
+  --pop: #ffd23f;
+  --card: #ffffff;
+  --muted: #5d5a80;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #14122b; --ink: #f1f0ff; --accent: #8b74ff; --card: #1f1c40; --muted: #a9a6d0; }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+main { max-width: 640px; margin: 0 auto; padding: 48px 20px 80px; }
+h1 { font-size: clamp(2.6rem, 9vw, 4rem); margin: 0; letter-spacing: -0.03em; }
+.tagline { color: var(--muted); margin: 8px 0 32px; max-width: 46ch; }
+
+fieldset { border: 0; padding: 0; margin: 0 0 24px; display: flex; flex-wrap: wrap; gap: 8px; }
+legend { font-weight: 700; margin-bottom: 10px; padding: 0; }
+label input { position: absolute; opacity: 0; }
+label span {
+  display: inline-block; padding: 8px 16px; border: 2px solid var(--ink);
+  border-radius: 999px; cursor: pointer; background: var(--card);
+}
+label input:checked + span { background: var(--accent); border-color: var(--accent); color: #fff; }
+label input:focus-visible + span { outline: 3px solid var(--pop); outline-offset: 2px; }
+
+button {
+  font: inherit; font-weight: 700; font-size: 1.05rem; cursor: pointer;
+  background: var(--pop); color: #1b1740; border: 2px solid var(--ink);
+  padding: 14px 28px; border-radius: 12px; box-shadow: 4px 4px 0 var(--ink);
+}
+button:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--ink); }
+button:disabled { opacity: 0.6; cursor: wait; }
+button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+#status { margin: 24px 0 0; min-height: 1.5em; color: var(--muted); }
+#status.error { color: #d6336c; }
+
+#results { display: grid; gap: 16px; margin-top: 16px; }
+.game { background: var(--card); border: 2px solid var(--ink); border-radius: 14px; padding: 18px 20px; }
+.game h2 { margin: 0 0 6px; font-size: 1.3rem; }
+.game p { margin: 6px 0 0; }
+.game .why { color: var(--accent); font-weight: 600; }
+
+@media (prefers-reduced-motion: reduce) { button:active { transform: none; } }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PlayNext – Stop scrolling. Start playing.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>PlayNext</h1>
+    <p class="tagline">Can't decide what to play? Tell us your vibe and AI picks three PC games.</p>
+
+    <form id="form">
+      <fieldset>
+        <legend>How are you feeling?</legend>
+        <label><input type="radio" name="mood" value="Bored" checked><span>Bored</span></label>
+        <label><input type="radio" name="mood" value="Relaxed"><span>Relaxed</span></label>
+        <label><input type="radio" name="mood" value="Competitive"><span>Competitive</span></label>
+        <label><input type="radio" name="mood" value="Adventurous"><span>Adventurous</span></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>How much time do you have?</legend>
+        <label><input type="radio" name="time" value="15 minutes"><span>15 min</span></label>
+        <label><input type="radio" name="time" value="30 minutes" checked><span>30 min</span></label>
+        <label><input type="radio" name="time" value="1 hour or more"><span>1 hour+</span></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>What kind of game?</legend>
+        <label><input type="radio" name="genre" value="Any genre" checked><span>Surprise me</span></label>
+        <label><input type="radio" name="genre" value="Action"><span>Action</span></label>
+        <label><input type="radio" name="genre" value="Adventure"><span>Adventure</span></label>
+        <label><input type="radio" name="genre" value="Puzzle"><span>Puzzle</span></label>
+        <label><input type="radio" name="genre" value="Multiplayer"><span>Multiplayer</span></label>
+      </fieldset>
+
+      <button type="submit" id="go">Find my next game</button>
+    </form>
+
+    <p id="status" role="status" aria-live="polite"></p>
+    <section id="results" aria-live="polite"></section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
